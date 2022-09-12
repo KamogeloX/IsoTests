@@ -25,6 +25,10 @@ namespace IsometrixTests.Page_Objects.Base
 		public IWebElement addBtn => driver.FindElement(By.Id("btnActAddNew"));
 		public IWebElement moduleSources => driver.FindElement(By.XPath("//div[text()='Module Sources']"));
 		public IWebElement modulesubsource => driver.FindElement(By.XPath("//div[text()='Module A2 - Specific']"));
+		public IWebElement dropDown => driver.FindElement(By.LinkText("Please select"));
+		public IWebElement saveBtn => driver.FindElement(By.XPath("/html/body/div[1]/div[3]/div/div[2]/div[2]/div[2]/div[2]/div[1]"));
+		public IWebElement logoutBtn => driver.FindElement(By.XPath("/html/body/div/div[2]/div[6]/a/i"));
+		public IWebElement txtHeader => driver.FindElement(By.Id("txtHeader"));
 
 	}
 }

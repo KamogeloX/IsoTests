@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace IsometrixTests.Page_Objects.Base
 {
@@ -16,16 +17,24 @@ namespace IsometrixTests.Page_Objects.Base
 			driver = new ChromeDriver();
 
 			driver.Navigate().GoToUrl("https://qa01.isometrix.net/IsoMetrix.Automation.Features/default.aspx");
-			Wait2Seconds();
+			Wait3Seconds();
 			driver.Manage().Window.Maximize();
 		}
 		public void CloseBrowser()
 		{
 			driver.Quit();
 		}
-		public void Wait2Seconds()
+		public void Wait3Seconds()
 		{
-			Thread.Sleep(2000);
+			Thread.Sleep(3000);
+		}
+
+		public void SelectDropdownValues(string id, string text)
+		{
+			IWebElement element = driver.FindElement(By.Id(id));
+			SelectElement selectElement = new SelectElement(element);
+			selectElement.SelectByText(text);
+			Wait3Seconds();
 		}
 
 	}
