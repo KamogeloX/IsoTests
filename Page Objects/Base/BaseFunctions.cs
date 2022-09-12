@@ -29,13 +29,5 @@ namespace IsometrixTests.Page_Objects.Base
 			Thread.Sleep(3000);
 		}
 
-		public void SelectDropdownValues(string id, string text)
-		{
-			IWebElement element = driver.FindElement(By.Id(id));
-			SelectElement selectElement = new SelectElement(element);
-			selectElement.SelectByText(text);
-			Wait3Seconds();
-		}
-
 	}
 }
